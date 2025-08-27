@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">E Commerce App</string>
+    <string name="make_nyour_style_ncome_ntrue_here">Make \nYour Style \nCome \nTrue Here</string>
+    <string name="intro_title">Make \nyour style \ncome \ntrue here</string>
 </resources>
