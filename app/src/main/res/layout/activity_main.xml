@@ -81,7 +81,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- RecyclerView -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
@@ -89,15 +88,14 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@+id/progressBar" />
+                    app:layout_constraintBottom_toTopOf="@+id/progressBarCatagory" />
 
-                <!-- ProgressBar -->
                 <ProgressBar
-                    android:id="@+id/progressBar"
+                    android:id="@+id/progressBarCatagory"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerView"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -106,8 +104,116 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- ViewPager2 Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarBanner"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:dotsColor="@color/LightGrey"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="6dp"
+                    app:dotsSpacing="2dp"
+                    android:id="@+id/dotsindicator"
+                    app:dotsWidthFactor="2.5"
+                    app:selectedDotColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:visibility="visible"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/recommendation"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEE all"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBarRecommmendation"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
         </LinearLayout>
 
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
