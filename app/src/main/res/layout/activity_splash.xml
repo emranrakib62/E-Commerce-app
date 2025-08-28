@@ -33,11 +33,29 @@
 
                 />
             <ImageView
+                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageview"
                 android:layout_gravity="end"
                 android:src="@drawable/shoes"/>
+
+            <TextView
+                android:id="@+id/startBtn"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="@string/go"
+                android:gravity="center"
+                android:textSize="44dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+               android:layout_marginTop="48dp"
+android:background="@drawable/circle_white_bg"
+                />
+
+
 
         </LinearLayout>
     </ScrollView>
