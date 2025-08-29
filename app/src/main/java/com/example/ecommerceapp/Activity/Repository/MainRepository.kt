@@ -23,6 +23,8 @@ class MainRepository {
                         list.add(it)
                     }
                 }
+
+                _brands.value=list
             }
 
             override fun onCancelled(error: DatabaseError) {
