@@ -182,7 +182,7 @@
                 android:layout_height="200dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView2"
+                    android:id="@+id/recyclerViewRecommendation"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     app:layout_constraintTop_toTopOf="parent"
@@ -213,6 +213,79 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:background="@drawable/blue_bg"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/btn_1"
+            android:padding="18dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"/>
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/btn_2"
+            android:padding="18dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"/>
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/btn_3"
+            android:padding="18dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"/>
+
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/btn_5"
+            android:padding="18dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+
+
+</com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 
 
