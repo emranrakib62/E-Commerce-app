@@ -3,6 +3,7 @@ package com.example.ecommerceapp.Activity.Adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerceapp.Activity.Model.BrandModel
+import com.example.ecommerceapp.databinding.ViewholderBrandBinding
 
 class BrandsAdapter(private val items: MutableList<BrandModel>):
     RecyclerView.Adapter<BrandsAdapter.Viewholder>() {
@@ -14,6 +15,9 @@ class BrandsAdapter(private val items: MutableList<BrandModel>):
         items.addAll(newData)
         notifyDataSetChanged()
     }
+    inner class Viewholder(val binding: ViewholderBrandBinding):
+    RecyclerView.ViewHolder(binding.root)
+    
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
