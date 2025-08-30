@@ -2,7 +2,9 @@ package com.example.ecommerceapp.Activity.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.R
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ecommerceapp.Activity.Model.BrandModel
 import com.example.ecommerceapp.databinding.ViewholderBrandBinding
 
@@ -29,7 +31,28 @@ class BrandsAdapter(private val items: MutableList<BrandModel>):
     }
 
     override fun onBindViewHolder(holder: BrandsAdapter.Viewholder, position: Int) {
-        TODO("Not yet implemented")
+        val item=items[position]
+
+        Glide.with(holder.itemView.context)
+            .load(item.picUrl)
+            .into(holder.binding.pic)
+
+        holder.binding.root.setOnClickListener{
+
+            if(selectedPosition !=position){
+                lastSelectedPosition=selectedPosition
+                selectedPosition=position
+
+                if(lastSelectedPosition != -1)notifyItemChanged(lastSelectedPosition)
+                notifyItemChanged(selectedPosition)
+            }
+
+        }
+       val isSelected=selectedPosition==position
+        holder.binding.pic.setBackgroundResource(
+            if(isSelected)0 else
+        )
+
     }
 
     override fun getItemCount()= items.size
