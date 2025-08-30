@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.Activity.Adapter
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerceapp.Activity.Model.BrandModel
@@ -23,15 +24,16 @@ class BrandsAdapter(private val items: MutableList<BrandModel>):
         parent: ViewGroup,
         viewType: Int
     ): BrandsAdapter.Viewholder {
-        TODO("Not yet implemented")
+       val binding= ViewholderBrandBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    return Viewholder(binding)
     }
 
     override fun onBindViewHolder(holder: BrandsAdapter.Viewholder, position: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount()= items.size
+
+
 
 }
