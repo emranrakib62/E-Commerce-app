@@ -10,6 +10,8 @@ import com.example.ecommerceapp.Activity.Adapter.BrandsAdapter
 import com.example.ecommerceapp.Activity.ViewModel.MainViewModel
 import com.example.ecommerceapp.databinding.ActivityMainBinding
 
+
+
 class DashboardActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by lazy {
