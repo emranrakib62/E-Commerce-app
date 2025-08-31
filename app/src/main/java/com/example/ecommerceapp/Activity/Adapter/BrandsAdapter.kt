@@ -1,11 +1,14 @@
 package com.example.ecommerceapp.Activity.Adapter
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.activity.R
+import androidx.core.widget.ImageViewCompat
+
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerceapp.Activity.Model.BrandModel
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ViewholderBrandBinding
 
 class BrandsAdapter(private val items: MutableList<BrandModel>):
@@ -50,9 +53,16 @@ class BrandsAdapter(private val items: MutableList<BrandModel>):
         }
        val isSelected=selectedPosition==position
         holder.binding.pic.setBackgroundResource(
-            if(isSelected)0 else
+            if(isSelected)0 else R.drawable.gray_full_corner
         )
-
+        ImageViewCompat.setImageTintList(
+            holder.binding.pic,
+            ColorStateList.valueOf(
+                holder.itemView.context.getColor(
+                    if(isSelected) R.color.white else R.color.black
+                )
+            )
+        )
     }
 
     override fun getItemCount()= items.size
