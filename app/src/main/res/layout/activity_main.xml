@@ -88,10 +88,10 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@+id/progressBarCatagory" />
+                    app:layout_constraintBottom_toTopOf="@+id/progress_bar_brands" />
 
                 <ProgressBar
-                    android:id="@+id/progressBarCatagory"
+                    android:id="@+id/progress_bar_brands"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
