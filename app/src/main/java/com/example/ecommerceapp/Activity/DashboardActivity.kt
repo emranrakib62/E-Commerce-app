@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerceapp.Activity.Adapter.BrandsAdapter
 import com.example.ecommerceapp.Activity.ViewModel.MainViewModel
 import com.example.ecommerceapp.R
@@ -25,6 +26,15 @@ class DashboardActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+          initUI()
+    }
+    private fun initUI(){
+initBrands()
 
     }
+    private fun initBrands(){
+      binding.recyclerViewBrands.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+    }
+
+
 }
