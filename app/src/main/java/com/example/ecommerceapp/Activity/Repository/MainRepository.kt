@@ -37,4 +37,18 @@ class MainRepository {
         })
     }
 
+    fun loadBanners(){
+      val ref = firebaseDatabase.getReference("Banner")
+      ref.addValueEventListener(object : ValueEventListener{
+          override fun onDataChange(snapshot: DataSnapshot) {
+              TODO("Not yet implemented")
+          }
+
+          override fun onCancelled(error: DatabaseError) {
+              TODO("Not yet implemented")
+          }
+
+      })
+  }
+
 }
