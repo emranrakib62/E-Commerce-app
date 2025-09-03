@@ -1,4 +1,5 @@
 package com.example.ecommerceapp.Activity.Model
 
-class SliderModel {
-}
+class SliderModel(val url: String)
+
+
