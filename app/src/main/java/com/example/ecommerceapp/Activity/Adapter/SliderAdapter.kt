@@ -42,7 +42,7 @@ private val imageView: ImageView=itemView.findViewById(R.id.imageslide)
 
     }
 
-    override fun onBindViewHolder(holder: SliderAdapter.SliderViewholder, position: Int) {
+    override fun onBindViewHolder(holder:SliderViewholder, position: Int) {
       holder.setImage(sliderItems[position],holder.itemView.context)
 if(position==sliderItems.lastIndex-1){
     viewPager2.post (runnable)

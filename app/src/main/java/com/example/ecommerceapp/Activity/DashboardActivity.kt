@@ -8,23 +8,21 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.ecommerceapp.Activity.Adapter.BrandsAdapter
+import com.example.ecommerceapp.Activity.Adapter.SliderAdapter
 import com.example.ecommerceapp.Activity.Model.BrandModel
+import com.example.ecommerceapp.Activity.Model.SliderModel
 import com.example.ecommerceapp.Activity.Repository.MainRepository
 import com.example.ecommerceapp.Activity.ViewModel.MainViewModel
 import com.example.ecommerceapp.databinding.ActivityMainBinding
 
 
 
+
 class DashboardActivity : AppCompatActivity() {
-
-    class MainViewModel : ViewModel() {  // ✅ Extend ViewModel
-        private val repository = MainRepository()
-        val brands: LiveData<MutableList<BrandModel>> = repository.brands
-
-        fun loadBrands() = repository.loadBrands()
-    }
-
 
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this)[MainViewModel::class.java]
@@ -43,6 +41,7 @@ class DashboardActivity : AppCompatActivity() {
     }
     private fun initUI(){
         initBrands()
+        initBanner()
 
     }
     private fun initBrands(){
@@ -61,4 +60,31 @@ viewModel.loadBrands()
 
 
     }
+    private fun setupBanners(image: List<SliderModel>){
+      binding.viewpagerSlider.apply {
+          adapter= SliderAdapter(image,this)
+          clipToPadding=false
+          clipChildren=false
+          offscreenPageLimit=3
+          (getChildAt(0) as? RecyclerView)?.overScrollMode=
+              RecyclerView.OVER_SCROLL_NEVER
+          setPageTransformer(CompositePageTransformer().apply {
+              addTransformer(MarginPageTransformer(40))
+          })
+      }
+       binding.dotsindicator.apply {
+           visibility=if (image.size >1) View.VISIBLE else View.GONE
+       if(image.size>1)attachTo(binding.viewpagerSlider)
+       }
+    }
+
+    private fun initBanner(){
+        binding.progressBarBanner.visibility= View.VISIBLE
+        viewModel.banners.observe(this) { items-> setupBanners(items)
+            binding.progressBarBanner.visibility= View.GONE
+        }
+        viewModel.loadBanners()
+    }
+
+
 }
