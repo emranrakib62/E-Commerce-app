@@ -41,7 +41,12 @@ class MainRepository {
       val ref = firebaseDatabase.getReference("Banner")
       ref.addValueEventListener(object : ValueEventListener{
           override fun onDataChange(snapshot: DataSnapshot) {
-              TODO("Not yet implemented")
+              val list =mutableListOf<SliderModel>()
+              for (childSnapshot in snapshot.children){
+                  childSnapshot.getValue(SliderModel::class.java)?.let {
+                      list.add(it)
+                  }
+              }
           }
 
           override fun onCancelled(error: DatabaseError) {
