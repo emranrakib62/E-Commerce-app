@@ -47,6 +47,8 @@ class MainRepository {
                       list.add(it)
                   }
               }
+_banners.value=list
+
           }
 
           override fun onCancelled(error: DatabaseError) {
