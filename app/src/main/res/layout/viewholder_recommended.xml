@@ -25,7 +25,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/btn_3"/>
+        tools:src="@drawable/btn_3"/>
 
     <TextView
         android:id="@+id/pricetxt"
@@ -55,15 +55,19 @@
          app:layout_constraintTop_toTopOf="@id/pricetxt"/>
 
 
+
+
     <ImageView
-    android:id="@+id/imageView6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="id/textview7"
-    app:layout_constraintEnd_toStartOf="@id/ratingTxt"
-    app:layout_constraintTop_toTopOf="@id/pricetxt"
-    tools:src="@drawable/star"/>
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/ratingTxt"
+        app:layout_constraintEnd_toStartOf="@id/ratingTxt"
+        app:layout_constraintTop_toTopOf="@id/pricetxt"
+        tools:src="@drawable/star"
+        tools:ignore="DuplicateIds" />
+
 
     <TextView
         android:id="@+id/titleTxt"

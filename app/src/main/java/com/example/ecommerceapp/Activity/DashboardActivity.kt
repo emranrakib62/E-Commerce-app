@@ -1,6 +1,7 @@
 package com.example.ecommerceapp.Activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -54,9 +55,15 @@ binding.recyclerViewRecommendation.layoutManager= GridLayoutManager(this,2)
 
         viewModel.popular.observe(this){
             data->
+
+            for (item in data) {
+                Log.d("DashboardActivity", "Item title: ${item.title}, picurl: ${item.picurl}")
+            }
+
             popularAdpater.updateDate(data)
             binding.progressBarRecommmendation.visibility= View.GONE
         }
+        viewModel.loadPopular()
 
     }
 
@@ -69,6 +76,9 @@ binding.recyclerViewRecommendation.layoutManager= GridLayoutManager(this,2)
 
         viewModel.brands.observe(this){
                 data ->
+
+
+
             brandsAdapter.updateData(newData = data)
             binding.progressBarBrands.visibility= View.GONE
         }
