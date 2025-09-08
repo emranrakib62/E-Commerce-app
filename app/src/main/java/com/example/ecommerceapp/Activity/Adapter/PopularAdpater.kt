@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.helper.widget.Layer
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ecommerceapp.Activity.Model.ItemModel
 import com.example.ecommerceapp.databinding.ViewholderRecommendedBinding
 
@@ -28,17 +29,23 @@ class PopularAdpater (
         viewType: Int
     ): PopularAdpater.ViewHolder {
         val binding= ViewholderRecommendedBinding.inflate(
-            LayoutInflater.from(parent.context),parent,
+            LayoutInflater.from(parent.context),parent,false
         )
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PopularAdpater.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item=items[position]
+        holder.binding.apply {
+            titleTxt.text=item.title
+            pricetxt.text="$${item.price}"
+            ratingTxt.text=item.rating.toString()
+
+            Glide.with(holder.itemView.context)
+        }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int =items.size
 
 }
 
