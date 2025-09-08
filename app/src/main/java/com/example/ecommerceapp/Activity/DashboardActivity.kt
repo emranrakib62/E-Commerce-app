@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.ecommerceapp.Activity.Adapter.BrandsAdapter
+import com.example.ecommerceapp.Activity.Adapter.PopularAdpater
 import com.example.ecommerceapp.Activity.Adapter.SliderAdapter
 import com.example.ecommerceapp.Activity.Model.BrandModel
 import com.example.ecommerceapp.Activity.Model.SliderModel
@@ -31,7 +33,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val brandsAdapter = BrandsAdapter(mutableListOf())
-
+private val popularAdpater= PopularAdpater(mutableListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,8 +44,22 @@ class DashboardActivity : AppCompatActivity() {
     private fun initUI(){
         initBrands()
         initBanner()
+initRecommended()
+    }
+
+    private fun initRecommended() {
+binding.recyclerViewRecommendation.layoutManager= GridLayoutManager(this,2)
+   binding.recyclerViewRecommendation.adapter=popularAdpater
+        binding.recyclerViewRecommendation.visibility= View.VISIBLE
+
+        viewModel.popular.observe(this){
+            data->
+            popularAdpater.updateDate(data)
+            binding.progressBarRecommmendation.visibility= View.GONE
+        }
 
     }
+
     private fun initBrands(){
         binding.recyclerViewBrands.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
 
