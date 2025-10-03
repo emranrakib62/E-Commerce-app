@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp">
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:background="@drawable/grey_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/pic"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
-        android:background="@drawable/grey_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        app:tint="@color/grey"
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/pic"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/btn_3"/>
+        app:tint="@color/grey"
+        tools:src="@drawable/btn_3" />
 
     <TextView
         android:id="@+id/pricetxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="$0"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:layout_marginStart="4dp"
         android:textStyle="bold"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pic"/>
+        app:layout_constraintStart_toStartOf="@+id/pic"
+        app:layout_constraintTop_toBottomOf="@id/pic" />
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/ratingTxt"
+            app:layout_constraintEnd_toStartOf="@id/ratingTxt"
+            app:layout_constraintTop_toTopOf="@id/pricetxt"
+            tools:src="@drawable/star" />
 
     <TextView
         android:id="@+id/ratingTxt"
@@ -49,40 +57,22 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toTopOf="@id/pricetxt"/>
-
-
-
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/ratingTxt"
-        app:layout_constraintEnd_toStartOf="@id/ratingTxt"
-        app:layout_constraintTop_toTopOf="@id/pricetxt"
-        tools:src="@drawable/star"
-        tools:ignore="DuplicateIds" />
-
+        app:layout_constraintEnd_toEndOf="@+id/pic"
+        app:layout_constraintTop_toTopOf="@id/pricetxt" />
 
     <TextView
         android:id="@+id/titleTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:lines="2"
         android:text="Title"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:lines="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pricetxt"/>
+        app:layout_constraintEnd_toEndOf="@+id/pic"
+        app:layout_constraintStart_toStartOf="@+id/pricetxt"
+        app:layout_constraintTop_toBottomOf="@id/pricetxt" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
