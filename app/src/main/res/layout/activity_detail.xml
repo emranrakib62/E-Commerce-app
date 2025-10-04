@@ -70,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Title"
+                    android:text="@string/title"
                     android:textColor="@color/black"
                     android:textSize="23dp"
                     android:textStyle="bold"
@@ -177,7 +177,7 @@
                 android:id="@+id/textview13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Color"
+                android:text="@string/select_color"
                 android:textSize="14sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -199,7 +199,7 @@
                 android:id="@+id/textview14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Size"
+                android:text="@string/select_size"
                 android:textSize="14sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -238,20 +238,31 @@
                             android:id="@+id/textView16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="@string/totalprice"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"/>
 
                         <TextView
-                            android:id="@+id/textView17"
+                            android:id="@+id/totalpricetext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="0$"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            android:textStyle="bold"/>
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
+                            style="@android:style/Widget.Button"
                             android:id="@+id/button"
+                            android:background="@drawable/blue_bg"
                             android:layout_weight="0.5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="@string/buy_now"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.recyclerview.widget.RecyclerView>

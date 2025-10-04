@@ -4,4 +4,9 @@
     <string name="intro_title">Make \nyour style \ncome \ntrue here</string>
     <string name="go">GO</string>
     <string name="recommendation">Recommendation</string>
+    <string name="totalprice">Totalprice</string>
+    <string name="select_color">Select Color</string>
+    <string name="select_size">Select Size</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="title">Title</string>
 </resources>
