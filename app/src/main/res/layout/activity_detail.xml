@@ -185,7 +185,7 @@
                 android:layout_marginTop="8dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:id="@+id/colorlist"
                 android:clipToPadding="false"
                 android:paddingEnd="8dp"
@@ -207,12 +207,54 @@
                 android:layout_marginTop="8dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:id="@+id/colorlist"
+                android:layout_width="wrap_content"
+                android:id="@+id/sizelist"
                 android:clipToPadding="false"
                 android:paddingEnd="8dp"
                 android:paddingStart="8dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/descriptiontext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_margin="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                       >
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Button" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.recyclerview.widget.RecyclerView>
 
 
         </LinearLayout>
