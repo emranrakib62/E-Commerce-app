@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginEnd="16dp"
     tools:context=".Activity.Activity.DetailActivity">
 
     <ScrollView
@@ -17,52 +16,55 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Top Bar -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginTop="48dp">
 
                 <ImageView
                     android:id="@+id/backbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/back"
-                    tools:ignore="MissingConstraints" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back" />
 
                 <ImageView
                     android:id="@+id/favbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/fav_icon"
-                    tools:ignore="MissingConstraints" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/fav_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageView
-                    android:id="@+id/picMain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="290dp"
-                    android:background="@drawable/grey_bg"
-                    android:padding="16dp"
-                    android:layout_margin="16dp"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic"
-                    tools:ignore="MissingConstraints" />
+            <!-- Main Image -->
+            <ImageView
+                android:id="@+id/picMain"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/grey_bg"
+                android:padding="16dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:id="@+id/picList"
-    android:clipToPadding="false"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp"
-    tools:ignore="MissingConstraints" />
+            <!-- Picture List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/picList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
+            <!-- Product Info Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp">
 
                 <TextView
@@ -107,9 +109,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textview8"
-                    app:layout_constraintStart_toEndOf="@+id/textview8"
-                    app:layout_constraintTop_toTopOf="@+id/textview8"
+                    app:layout_constraintBottom_toBottomOf="@id/textview8"
+                    app:layout_constraintStart_toEndOf="@id/textview8"
+                    app:layout_constraintTop_toTopOf="@id/textview8"
                     app:srcCompat="@drawable/star" />
 
                 <TextView
@@ -119,17 +121,15 @@
                     android:layout_marginStart="8dp"
                     android:text="5"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@+id/star"
-                    app:layout_constraintStart_toEndOf="@+id/star"
-                    app:layout_constraintTop_toTopOf="@+id/star" />
+                    app:layout_constraintBottom_toBottomOf="@id/star"
+                    app:layout_constraintStart_toEndOf="@id/star"
+                    app:layout_constraintTop_toTopOf="@id/star" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    tools:ignore="MissingConstraints"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/stroke_bg"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -142,8 +142,7 @@
                         android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -155,7 +154,7 @@
                         android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -164,15 +163,15 @@
                         android:text="1"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView11"
+                        app:layout_constraintBottom_toTopOf="@id/textView11"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Select Color -->
             <TextView
                 android:id="@+id/textview13"
                 android:layout_width="match_parent"
@@ -182,19 +181,17 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
                 android:id="@+id/colorlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:paddingEnd="8dp"
                 android:paddingStart="8dp"
-                android:layout_height="match_parent"/>
+                android:paddingEnd="8dp" />
 
-
-
-
+            <!-- Select Size -->
             <TextView
                 android:id="@+id/textview14"
                 android:layout_width="match_parent"
@@ -204,69 +201,68 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
                 android:id="@+id/sizelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:paddingEnd="8dp"
                 android:paddingStart="8dp"
-                android:layout_height="match_parent">
+                android:paddingEnd="8dp" />
 
-                <TextView
-                    android:id="@+id/descriptiontext"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:layout_margin="16dp"/>
+            <!-- Description -->
+            <TextView
+                android:id="@+id/descriptiontext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_margin="16dp" />
+
+            <!-- Bottom section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_margin="8dp">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                       >
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalprice"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black" />
 
-                        <TextView
-                            android:id="@+id/textView16"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/totalprice"
-                            android:textStyle="bold"
-                            android:textSize="16dp"
-                            android:textColor="@color/black"/>
-
-                        <TextView
-                            android:id="@+id/totalpricetext"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="0$"
-                            android:textColor="@color/black"
-                            android:textSize="21sp"
-                            android:textStyle="bold"/>
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            style="@android:style/Widget.Button"
-                            android:id="@+id/button"
-                            android:background="@drawable/blue_bg"
-                            android:layout_weight="0.5"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/buy_now"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"/>
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/totalpricetext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0$"
+                        android:textColor="@color/black"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-            </androidx.recyclerview.widget.RecyclerView>
 
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@android:style/Widget.Button"
+                    android:id="@+id/button"
+                    android:background="@drawable/blue_bg"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buy_now"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
