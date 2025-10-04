@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.Activity.Repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.ecommerceapp.Activity.Model.BrandModel
@@ -56,7 +57,7 @@ _banners.value=list
           }
 
           override fun onCancelled(error: DatabaseError) {
-              TODO("Not yet implemented")
+
           }
 
       })
@@ -78,7 +79,7 @@ _banners.value=list
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
 
         })

@@ -45,7 +45,7 @@ private val popularAdpater= PopularAdpater(mutableListOf())
     private fun initUI(){
         initBrands()
         initBanner()
-initRecommended()
+        initRecommended()
     }
 
     private fun initRecommended() {
@@ -57,7 +57,7 @@ binding.recyclerViewRecommendation.layoutManager= GridLayoutManager(this,2)
             data->
 
             for (item in data) {
-                Log.d("DashboardActivity", "Item title: ${item.title}, picurl: ${item.picurl}")
+                Log.d("DashboardActivity", "Item title: ${item.title}, picurl: ${item.picUrl}")
             }
 
             popularAdpater.updateDate(data)

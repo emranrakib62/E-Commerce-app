@@ -37,15 +37,15 @@ class PopularAdpater (
     }
 
     override fun onBindViewHolder(holder: PopularAdpater.ViewHolder, position: Int) {
-        val item=items[position]
+        val item = items[position]
         holder.binding.apply {
-            titleTxt.text=item.title
-            pricetxt.text="$${item.price}"
-            ratingTxt.text=item.rating.toString()
+            titleTxt.text = item.title
+            pricetxt.text = "$${item.price}"
+            ratingTxt.text = item.rating.toString()
 
             Glide.with(holder.itemView.context)
-                .load(item.picurl.firstOrNull())
-                .apply { RequestOptions().transform(CenterCrop()) }
+                .load(item.picUrl.firstOrNull())
+                .apply(RequestOptions().centerCrop())
                 .into(pic)
         }
     }
