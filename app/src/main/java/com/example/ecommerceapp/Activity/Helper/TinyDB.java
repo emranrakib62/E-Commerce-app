@@ -32,6 +32,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
+import com.example.ecommerceapp.Activity.Model.ItemModel;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -362,14 +363,14 @@ public class TinyDB {
 
     // Put methods
 
-    public ArrayList<ItemsModel> getListObject(String key) {
+    public ArrayList<ItemModel> getListObject(String key) {
         Gson gson = new Gson();
 
         ArrayList<String> objStrings = getListString(key);
-        ArrayList<ItemsModel> playerList = new ArrayList<ItemsModel>();
+        ArrayList<ItemModel> playerList = new ArrayList<ItemModel>();
 
         for (String jObjString : objStrings) {
-            ItemsModel player = gson.fromJson(jObjString, ItemsModel.class);
+            ItemModel player = gson.fromJson(jObjString, ItemModel.class);
             playerList.add(player);
         }
         return playerList;
@@ -532,11 +533,11 @@ public class TinyDB {
         putString(key, gson.toJson(obj));
     }
 
-    public void putListObject(String key, ArrayList<ItemsModel> playerList) {
+    public void putListObject(String key, ArrayList<ItemModel> playerList) {
         checkForNullKey(key);
         Gson gson = new Gson();
         ArrayList<String> objStrings = new ArrayList<String>();
-        for (ItemsModel player : playerList) {
+        for (ItemModel player : playerList) {
             objStrings.add(gson.toJson(player));
         }
         putListString(key, objStrings);
