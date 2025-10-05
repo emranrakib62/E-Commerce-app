@@ -25,7 +25,7 @@
                 android:layout_marginTop="48dp">
 
                 <ImageView
-                    android:id="@+id/backbtn"
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
                 android:layout_marginHorizontal="16dp">
 
                 <TextView
-                    android:id="@+id/textview6"
+                    android:id="@+id/titleTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -80,7 +80,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textview7"
+                    android:id="@+id/priceTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -88,11 +88,11 @@
                     android:textColor="@color/black"
                     android:textSize="22dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/textview6"
-                    app:layout_constraintTop_toBottomOf="@id/textview6" />
+                    app:layout_constraintStart_toStartOf="@id/titleTxt"
+                    app:layout_constraintTop_toBottomOf="@id/titleTxt" />
 
                 <TextView
-                    android:id="@+id/textview8"
+                    android:id="@+id/oldPriceTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -100,22 +100,22 @@
                     android:textColor="@color/red"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@id/textview7"
-                    app:layout_constraintStart_toEndOf="@id/textview7"
-                    app:layout_constraintTop_toTopOf="@id/textview7" />
+                    app:layout_constraintBottom_toBottomOf="@id/priceTxt"
+                    app:layout_constraintStart_toEndOf="@id/priceTxt"
+                    app:layout_constraintTop_toTopOf="@id/priceTxt" />
 
                 <ImageView
                     android:id="@+id/star"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    app:layout_constraintBottom_toBottomOf="@id/textview8"
-                    app:layout_constraintStart_toEndOf="@id/textview8"
-                    app:layout_constraintTop_toTopOf="@id/textview8"
+                    app:layout_constraintBottom_toBottomOf="@id/oldPriceTxt"
+                    app:layout_constraintStart_toEndOf="@id/oldPriceTxt"
+                    app:layout_constraintTop_toTopOf="@id/oldPriceTxt"
                     app:srcCompat="@drawable/star" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/ratingTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -133,7 +133,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/plusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:text="+"
@@ -145,7 +145,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/minusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:text="-"
@@ -157,13 +157,14 @@
                         app:layout_constraintBottom_toBottomOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/numberItemTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1"
-                        android:textStyle="bold"
                         android:textSize="18sp"
-                        app:layout_constraintBottom_toTopOf="@id/textView11"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/minusBtn"
+                        app:layout_constraintTop_toBottomOf="@+id/plusBtn"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 

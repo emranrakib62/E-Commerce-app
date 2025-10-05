@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.Activity.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.helper.widget.Layer
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
+import com.example.ecommerceapp.Activity.Activity.DetailActivity
 import com.example.ecommerceapp.Activity.Model.ItemModel
 import com.example.ecommerceapp.databinding.ViewholderRecommendedBinding
 
@@ -47,6 +49,14 @@ class PopularAdpater (
                 .load(item.picUrl.firstOrNull())
                 .apply(RequestOptions().centerCrop())
                 .into(pic)
+
+
+            root.setOnClickListener {
+                val intent= Intent(holder.itemView.context,
+                    DetailActivity::class.java)
+                intent.putExtra("object",item)
+                holder.itemView.context.startActivity(intent)
+            }
         }
     }
 

@@ -10,7 +10,7 @@ data class ItemModel(
     var price : Double=0.0,
     var oldprice : Double=0.0,
     var rating: Double=0.0,
-    var numberIncart: Int=1,
+    var numberInCart: Int=1,
 
 
 
