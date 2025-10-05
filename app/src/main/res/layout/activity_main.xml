@@ -36,7 +36,8 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Welcome To Our Shop"
+                        android:layout_marginTop="10dp"
+                        android:text="👋Welcome to EliteMart!🛍️✨"
                         android:textSize="18sp"
                         android:padding="8dp" />
 
@@ -44,8 +45,9 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rakib Store"
+                        android:text="EliteMart"
                         android:textSize="24sp"
+                        android:textColor="@color/blue"
                         android:textStyle="bold"
                         android:padding="8dp" />
 
