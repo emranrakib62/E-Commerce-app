@@ -6,7 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.Activity.Adapter.PicsAdapter
 import com.example.ecommerceapp.Activity.Helper.ManagmentCart
 import com.example.ecommerceapp.Activity.Model.ItemModel
 import com.example.ecommerceapp.R
@@ -29,7 +31,29 @@ private lateinit var managmentCart:ManagmentCart
         item = intent.getSerializableExtra("object")!! as ItemModel
 
         setupViews()
+        setupPicsList()
 
+    }
+
+    private fun setupPicsList(){
+        val picList = item.picUrl.toList()
+
+
+        binding.picList.apply {
+
+            adapter = PicsAdapter( picList as MutableList<String>) { imageUrl ->
+
+                Glide.with(this@DetailActivity) // Context of the current Activity
+                    .load( imageUrl)
+                    .into( binding.picMain) // Assuming 'picMain' is the large image view
+            }
+
+            layoutManager = LinearLayoutManager(
+                context,
+                LinearLayoutManager.HORIZONTAL,
+               false
+            )
+        }
     }
 
 
