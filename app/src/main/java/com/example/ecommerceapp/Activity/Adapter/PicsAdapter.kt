@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ViewholderBrandBinding
 import com.example.ecommerceapp.databinding.ViewholderPicsBinding
 
@@ -42,8 +43,13 @@ RecyclerView.Adapter<PicsAdapter.Viewholder>()
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
 
-
             onImageSelected(items[position])
+        }
+
+        if(selectedPosition==position){
+            holder.binding.colorlayout.setBackgroundResource(R.drawable.grey_bg_selected)
+        }else{
+            holder.binding.colorlayout.setBackgroundResource(R.drawable.grey_bg)
         }
     }
 
