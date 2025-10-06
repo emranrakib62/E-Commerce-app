@@ -25,9 +25,11 @@ class CartActivity : AppCompatActivity() {
         managmentCart= ManagmentCart(this)
         initView()
         calculateCart()
-
+        initCartList()
 
     }
+
+
 
     private fun initView() {
         binding.backBtn.setOnClickListener { finish() }

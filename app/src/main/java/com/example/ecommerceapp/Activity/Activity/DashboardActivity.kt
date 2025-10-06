@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.Activity.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -39,6 +40,13 @@ private val popularAdpater= PopularAdpater(mutableListOf())
         initBrands()
         initBanner()
         initRecommended()
+        initBottomNavigation()
+    }
+
+    private fun initBottomNavigation() {
+       binding.imageView4.setOnClickListener {
+           startActivity(Intent(this, CartActivity::class.java))
+       }
     }
 
     private fun initRecommended() {
