@@ -37,6 +37,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textColor="#ABE815"
                         android:text="👋Welcome to EliteMart!🛍️✨"
                         android:textSize="18sp"
                         android:padding="8dp" />
