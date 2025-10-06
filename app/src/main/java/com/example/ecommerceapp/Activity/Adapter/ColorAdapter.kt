@@ -1,7 +1,11 @@
 package com.example.ecommerceapp.Activity.Adapter
 
 import android.R
+import android.graphics.PorterDuff
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerceapp.databinding.ViewholderColorBinding
 
@@ -20,17 +24,29 @@ private var selectedPosition=-1
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ColorAdapter.ViewHolder {
-        TODO("Not yet implemented")
+    ):ViewHolder {
+        val binding= ViewholderColorBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ColorAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val color=items[position].toColorInt()
+        holder.binding.colorcircle.setColorFilter(color, PorterDuff.Mode.SRC_IN)
+    holder.binding.strokeView.visibility=if(selectedPosition==position) View.VISIBLE
+        else
+            View.GONE
+
+        holder.binding.root.setOnClickListener {
+            if(selectedPosition!=position){
+                lastSelectedPosition=selectedPosition
+                selectedPosition=position
+                if(lastSelectedPosition!=-1) notifyItemChanged(lastSelectedPosition)
+                notifyItemChanged(selectedPosition)
+            }
+        }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int =items.size
 
 }
 
