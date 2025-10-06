@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.Activity.Adapter.ColorAdapter
 import com.example.ecommerceapp.Activity.Adapter.PicsAdapter
 import com.example.ecommerceapp.Activity.Helper.ManagmentCart
 import com.example.ecommerceapp.Activity.Model.ItemModel
@@ -32,7 +33,15 @@ private lateinit var managmentCart:ManagmentCart
 
         setupViews()
         setupPicsList()
+        setupColorsList()
 
+    }
+
+    private fun setupColorsList() {
+        binding.colorlist.adapter= ColorAdapter(item.color)
+        binding.colorlist.layoutManager= LinearLayoutManager(
+            this, LinearLayoutManager.HORIZONTAL,false
+        )
     }
 
     private fun setupPicsList(){
