@@ -7,7 +7,7 @@
     android:layout_marginBottom="8dp">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/pic"
         android:layout_width="90dp"
         android:background="@drawable/grey_bg"
         android:layout_height="90dp"
@@ -23,11 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Title"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/pic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/feeEachItemTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$0"
@@ -45,10 +45,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="@+id/feeEachItemTxt" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/pluscartBtn"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:text="+"
@@ -57,5 +57,28 @@
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/minuscartBtn"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:text="-"
+        android:gravity="center"
+        android:background="@drawable/gray_full_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/numbercartItemTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/pluscartBtn"
+        app:layout_constraintStart_toStartOf="@+id/pluscartBtn"
+        app:layout_constraintTop_toBottomOf="@+id/pluscartBtn"
+        app:layout_constraintBottom_toTopOf="@+id/minuscartBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
