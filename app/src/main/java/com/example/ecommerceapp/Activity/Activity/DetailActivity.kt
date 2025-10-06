@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.ecommerceapp.Activity.Adapter.ColorAdapter
 import com.example.ecommerceapp.Activity.Adapter.PicsAdapter
+import com.example.ecommerceapp.Activity.Adapter.SizeAdapter
 import com.example.ecommerceapp.Activity.Helper.ManagmentCart
 import com.example.ecommerceapp.Activity.Model.ItemModel
 import com.example.ecommerceapp.R
@@ -34,7 +35,16 @@ private lateinit var managmentCart:ManagmentCart
         setupViews()
         setupPicsList()
         setupColorsList()
+        setupSizeList()
 
+    }
+
+    private fun setupSizeList() {
+        val sizeList=item.size.map { it }
+        binding.sizelist.apply {
+            adapter= SizeAdapter(sizeList as MutableList<String>)
+            layoutManager= LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        }
     }
 
     private fun setupColorsList() {
