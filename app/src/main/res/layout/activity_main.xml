@@ -37,9 +37,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="14dp"
                         android:textStyle="bold"
-                        android:textColor="#ABE815"
+                        android:textColor="@color/black"
                         android:text="👋Welcome to EliteMart!🛍️✨"
                         android:textSize="18sp"
                         android:padding="8dp" />
@@ -228,13 +228,14 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="wrap_content"
         android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 <com.google.android.material.bottomnavigation.BottomNavigationView
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
     android:layout_gravity="center"
     android:background="@drawable/blue_bg"
     >
@@ -243,7 +244,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+
+
         <ImageView
+
             android:id="@+id/imageView3"
             android:layout_width="60dp"
             android:layout_height="60dp"
